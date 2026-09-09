@@ -44,6 +44,25 @@
             color: var(--flora-dark-red);
         }
 
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-assessment-link {
+            font-size: 0.8rem;
+            color: var(--flora-dark-red);
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+        }
+        .nav-assessment-link:hover {
+            opacity: 0.75;
+        }
+
         .nav-tag {
             font-size: 0.8rem;
             background: #FFF0F2;
@@ -232,7 +251,7 @@
             color: var(--flora-dark-gray); 
         }
 
-        .takeaways-container { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+        .takeaways-container { display: flex; flex-direction: column; gap: 14px; margin-bottom: 25px; }
         .takeaway-card { 
             background: #FAFAFA; 
             border: 1px solid #EEEEEE; 
@@ -242,6 +261,46 @@
         }
         .takeaway-card h4 { margin: 0 0 6px 0; font-size: 0.98rem; font-weight: 800; color: var(--flora-dark-gray); }
         .takeaway-card p { margin: 0; font-size: 0.88rem; color: rgba(37, 37, 37, 0.85); line-height: 1.4; }
+
+        /* ScoreApp Assessment Callout Card */
+        .assessment-card {
+            background: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .assessment-card h4 {
+            margin: 0 0 8px 0;
+            color: var(--flora-dark-gray);
+            font-size: 1rem;
+            font-weight: 800;
+        }
+        .assessment-card p {
+            margin: 0 0 15px 0;
+            font-size: 0.85rem;
+            color: rgba(37, 37, 37, 0.8);
+            line-height: 1.4;
+        }
+        .assessment-btn {
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid var(--flora-dark-red);
+            color: var(--flora-dark-red);
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+        .assessment-btn:hover {
+            background-color: var(--flora-dark-red);
+            color: #FFFFFF;
+        }
 
         /* Form Card */
         .form-card { 
@@ -304,9 +363,13 @@
 </head>
 <body>
 
+    <!-- Top Navigation Bar -->
     <div class="top-nav">
         <div class="brand-logo">Flora Mutahi</div>
-        <div class="nav-tag">Live Masterclass</div>
+        <div class="nav-right-group">
+            <a href="https://scale-founders-7z485vbf.scoreapp.com/" target="_blank" class="nav-assessment-link">Founder Assessment</a>
+            <div class="nav-tag">Live Masterclass</div>
+        </div>
     </div>
 
     <!-- Hero Section -->
@@ -360,7 +423,7 @@
                 </div>
             </div>
 
-            <!-- Restored: What We Will Cover Live -->
+            <!-- What We Will Cover Live Section -->
             <div class="section-title">What We Will Cover Live</div>
             <div class="takeaways-container">
                 <div class="takeaway-card">
@@ -375,6 +438,13 @@
                     <h4>3. Building Operational Rhythms That Scale</h4>
                     <p>Establish clear meeting cadence, decision matrices, and accountability structures so your business runs efficiently without your constant physical presence.</p>
                 </div>
+            </div>
+
+            <!-- ScoreApp Assessment Link Card -->
+            <div class="assessment-card">
+                <h4>Want to evaluate your scaling readiness?</h4>
+                <p>Take the quick Founder ScoreApp Assessment before attending the live masterclass.</p>
+                <a href="https://scale-founders-7z485vbf.scoreapp.com/" target="_blank" class="assessment-btn">Take The Free Assessment &rarr;</a>
             </div>
 
         </div>
@@ -474,7 +544,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Form logic
+        // Form conditional logic
         function toggleExperienceField() {
             const roleSelect = document.getElementById("role");
             const corpContainer = document.getElementById("corporate-container");
